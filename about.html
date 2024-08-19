@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIXTERIX - Acerca de mi</title>
+    <link href="css\custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="scss\custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Asegura que el contenedor se ajuste al ancho de la pantalla */
+}
+
+        .image-container-setup{
+            position: relative;
+            width: 100%;
+            max-width: 2100px; /* Ajusta el tamaño según tus necesidades */
+            border-radius: 50px;
+            height: auto;
+            width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }   
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45%; /* Ajusta la altura del desvanecimiento según tus necesidades */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+            pointer-events: none; /* Permite la interacción con la imagen debajo */
+        }
+
+        .image-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35%; /* Ajusta la altura del desvanecimiento según tus necesidades */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+            pointer-events: none; /* Permite la interacción con la imagen debajo */
+        }
+        
+
+        .custom-div {
+            padding: 1rem; /* Espaciado interior */
+            margin: 3rem; /* Espaciado exterior */
+        }
+
+        .neon-effect {
+            position: relative;
+            display: inline-block;
+            margin: 20px; /* Margen para hacer espacio */
+        }
+
+        .neon-effect img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 300px; /* Ajusta el radio del borde según tus necesidades */
+        }
+
+        .neon-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 300px; /* Ajusta el radio del borde según tus necesidades */
+            box-shadow: 0 0 20px rgba(0, 255, 119, 0.5),
+                        0 0 30px rgba(0, 255, 119, 0.5),
+                        0 0 40px rgba(0, 255, 119, 0.5),
+                        0 0 50px rgba(0, 255, 119, 0.5),
+                        0 0 60px rgba(0, 255, 119, 0.5),
+                        0 0 70px rgba(0, 255, 119, 0.5),
+                        0 0 80px rgba(0, 255, 119, 0.5);
+            pointer-events: none; /* Permite que la imagen siga siendo interactiva */
+        }
+
+        .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 90%; /* Asegura que el texto no se salga del contenedor en pantallas pequeñas */
+    text-align: center;
+    font-size: 3rem; /* Ajusta el tamaño de la fuente */
+    }
+        .image-container-setup::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%; /* Ajusta la altura del desvanecimiento según tus necesidades */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+        border-radius: 0 0 50px 50px; /* Ajusta el border-radius para coincidir con la parte inferior del contenedor */
+        pointer-events: none; /* Permite la interacción con la imagen debajo */
+        }
+        .image-container-setup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45%; /* Ajusta la altura del desvanecimiento según tus necesidades */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+            pointer-events: none; /* Permite la interacción con la imagen debajo */
+        }
+        .chido-effect:hover{
+        border-radius: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 255, 21, 0.2);
+    }
+    .nav-link{
+        color: #ffffff;
+    }
+    .nav-link:hover{
+        color: #00ff00;
+    }
+
+    @media (max-width: 768px) {
+    .text-overlay {
+        font-size: 1rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        padding: 5px; /* Ajusta el padding para pantallas pequeñas */
+    }
+    .neon-effect img{
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-overlay {
+        font-size: 0.9rem; /* Ajusta aún más el tamaño de la fuente en pantallas muy pequeñas */
+    }
+
+}
+</style>
+</head>
+<body class="bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white h1 d-flex align-items-center" href="#">
+                <img src="imagenes/logofullheader.png" alt="logo" width="50" class="d-inline-block align-text-top">
+                MIXTERIX - Comunidad Gamer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item h5">
+                        <a class="nav-link"  href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item h5">
+                        <a class="nav-link" href="about.html">Acerca De Mi</a>
+                    </li>
+                    <li class="nav-item h5">
+                        <a class="nav-link " href="social.html">Redes Sociales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-5 pt-5 d-flex align-items-center justify-content-center">
+        <div class="image-container">
+            <img src="imagenes/wallpaper-about.jpg" alt="eldenRing-wallpaper">
+            <div class="fade-bottom"></div>
+            <div class="text-overlay h1 text-center text-white chido-effect">
+                LAS DIFICULTADES DEL CAMINO FORJAN EL CARACTER DEL HOMBRE
+            </div>
+        </div>       
+    </div>
+    <div class="d-flex container-fluid align-items-center justify-content-center">
+        <div class="neon-effect">
+            <img src="imagenes/fotoperfil.jpeg" alt="foto-cartoon" class="img-fluid custom-rounded-circle mx-auto d-block">        
+        </div>
+    </div>
+    <div class="container mt-5 img">
+        <p class="text-white text-justify">Soy un joven colombiano de 25 años, amante del mundo de los videojuegos que hace un año empezo este proyecto con ganas 
+            de compartir con las personas mi gusto por este pasatiempo. Mi primer contacto con los videojuegos fue por alla en 2004 cuando estaban en auge
+            los GTA, mi primo llevo a casa un videojuego de mundo abierto donde podias hacer casi lo que quisieras con unos graficos TOP para la fecha, ese juego
+            era GTA 3, pronto me empece a emocionar y quise averiguar mas,  un año despues con 6 años de edad me di cuenta de la existencia de GTA SAN ANDREAS, 
+            juego que tuvo un gran impacto en mi y consumio mas de 5000 horas de mi vida en su version online. Tuve las dos consolas que a mi parecer son las mejores de la historia:
+            el PlayStation 2 y el XBOX 360, en los ultimos años de mi vida me he dedicado mas a jugar en PC pero mi amor por los videojuegos sigue intacto, entre mis favoritos:
+            la saga FALLOUT, jugar Skyrim en las tardes en mi xbox 360 mientras tenia 14 años, FIFA 15-17 en mi xbox 360 chipeada con sus soundtracks memorables, las noches de mi juventud
+            jugando league of legends mientras evitaba hacer los trabajos de la universidad y no valio la pena quede a 2 partidas de diamante, Minecraft que me tranquilizaba en mis
+            momentos mas angustiantes, Red Dead Redemption 2 que me ayudo en una etapa dificil de mi matrimonio, los videojuegos pueden ser un refugio importante para muchas personas, pero 
+            debemos recordar que mas alla de la pantalla hay gente que con nuestra ayuda y amor pueden salir adelante y podemos ser un refugio para ellos tambien. 
+             </p>
+        <h2 class="text-white text-center mt-4">ESPECIFICACIONES DE HARDWARE DE MI EQUIPO</h2>
+        <ul class="list-unstyled text-white mt-3">
+            <li>En este equipo realizo grabación, streaming y juego al mismo tiempo: </li>
+            <div class="image-container-setup mt-4">
+                <img src="imagenes/setup.jpeg" alt="setup-gamer" class="img-fluid">
+            </div>
+            <li>
+                <ul>
+                    <li>Computador portatil gamer HP PAVILION 15</li>
+                    <li>Procesador AMD RYZEN 5 4600 H</li>
+                    <li>RAM: 32 GB Dual Channel</li>
+                    <li>Tarjeta Grafica NVIDIA GFORCE GTX 1650Ti 4GB</li>
+                    <li>Teclado mecanico alambrico DIERYA DK61SE</li>
+                    <li>Monitor ACER KB272 27 pulgadas IPS/100hz </li>
+                </ul>
+            </li>
+        </ul>
+        <h2 class="text-white text-center mt-4">DONACIONES</h2>
+        <p class="text-white">Si deseas contribuir para seguir mejorando la calidad de los streams, grabaciones y videos. O simplemente quieres agradecer
+            monetariamente por el contenido brindado puedes hacerlo por medio de una donacion en PAYPAL o alguna membresia exclusiva en Patreon:
+        </p>
+        <div class="mt-5 container-fluid d-flex justify-content-center pb-5 gap-5">
+            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="hosted_button_id" value="B38GYDMP4J9E4" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_CO/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            <a href="https://patreon.com/user?u=83648458&utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" class="btn btn-secondary btn-lg " target="_blank">MEMBRESIA PATREON</a>
+        </div>
+     
+    </div> 
+    <footer class="bg-body-primary bg-gradient text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+      
+            <!-- TWITTER -->
+            <a
+              data-mdb-ripple-init
+              class="btn text-white btn-floating m-1"
+              style="background-color: #107cae;"
+              href="https://x.com/mixterix99"
+              role="button"
+              target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- YOUTUBE -->
+            <a
+              data-mdb-ripple-init
+              class="btn text-white btn-floating m-1"
+              style="background-color: #fb1d00;"
+              href="https://www.youtube.com/channel/UCbfCDLM_aLGDD1OCZ_IXQkg"
+              role="button"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+      
+            <!-- TIKTOK -->
+            <a
+              data-mdb-ripple-init
+              class="btn text-white btn-floating m-1"
+              style="background-color: #000000;"
+              href="https://www.tiktok.com/@mixterixoficial"
+              role="button"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3 text-white mb-2" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2024 Copyright: MixterixOficial
+</body>
+</html>

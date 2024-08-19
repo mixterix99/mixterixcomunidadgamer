@@ -1,0 +1,22 @@
+
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+$primary: rgb(0, 0, 0);
+$secondary: rgba(36, 121, 70, 0.329);
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+.custom-rounded-circle {
+  width: 350px; /* Ajusta el tamaño del contenedor */
+  height: 350px; /* Ajusta el tamaño del contenedor */
+  border-radius: 70%; /* Hace que el contenedor sea un círculo */
+  overflow: hidden; /* Asegura que el contenido se ajuste al contenedor */
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here

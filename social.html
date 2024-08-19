@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIXTERIX - Redes Sociales</title>
+    <link href="css\custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="scss\custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    :root {
+        --max: 18rem;
+    }
+    body {
+        position: relative;
+        margin: 0;
+        padding-top: 140px; /* Ajusta esto según la altura del navbar */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-brand img {
+    max-width: 50px; /* Ajusta el tamaño del logo para que se vea bien en móviles */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem; /* Ajusta el tamaño del texto para que sea legible en dispositivos móviles */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Ajusta el color del botón de hamburguesa si es necesario */
+}
+    .container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+    .background {
+        position: fixed; /* Cambiado a fixed para que cubra toda la pantalla */
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('imagenes/socialbg.jpg'); /* Asegúrate de que la ruta de la imagen es correcta */
+        background-size: cover;
+        background-position: center;
+        filter: blur(8px); /* Ajusta el nivel de desenfoque */
+        z-index: -2;
+    }
+    .overlay {
+        position: fixed; /* Cambiado a fixed para que cubra toda la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+                    linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        z-index: -1;
+    }
+    .content {
+        position: relative;
+        z-index: 1;
+        color: white; /* Asegúrate de que el texto sea visible sobre el fondo */
+    }
+    .card {
+        width: var(--max);
+    }
+    .card-img-top {
+        object-fit: fill;
+        height: calc(var(--max));
+        width: 100%;
+        max-width: var(--max);
+    }
+    .footer {
+        margin-top: auto;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+    }
+    .container-fluid{
+        width: 100%;
+        align-items: center;
+    }
+    .container-fluid h1{
+        color: #ffffff;
+        text-align: center;
+        font-size: 80px;
+    }
+
+    .container-fluid h1:after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        line-height: 48px;
+        left: 30%;
+        top: 50%;
+        animation: abomination1 5.5s linear 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes abomination1 {
+  0% {
+    content: "R";
+  }
+  8% {
+    content: "RE";
+  }
+  16% {
+    content: "RED";
+  }
+  24% {
+    content: "REDES";
+  }
+  32% {
+    content: "REDES ";
+  }
+  40% {
+    content: "REDES S";
+  }
+  48% {
+    content: "REDES SO";
+  }
+  56% {
+    content: "REDES SOC";
+  }
+  64% {
+    content: "REDES SOCI";
+  }
+  72% {
+    content: "REDES SOCIA";
+  }
+  80% {
+    content: "REDES SOCIAL";
+  }
+  88% {
+    content: "REDES SOCIALE";
+  }
+  100% {
+    content: "REDES SOCIALES";
+  }
+}
+ 
+
+    .hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(26, 255, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+
+.hvr-float-shadow:hover:before,
+.hvr-float-shadow:focus:before,
+.hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  background: radial-gradient(ellipse at center, rgba(26, 255, 0, 0.7) 0%, rgba(26, 255, 0, 0) 80%);
+  /* Cambia a un verde neón en el hover */
+}
+.nav-link{
+        color: #ffffff;
+    }
+    .nav-link:hover{
+        color: #00ff00;
+    }
+
+    @media (max-width: 576px) {
+    .card {
+        width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+        margin-bottom: 1rem; /* Espacio entre las tarjetas */
+    }
+
+    .container {
+        padding: 0 1rem; /* Asegura un pequeño padding lateral */
+    }
+}
+</style>
+</head>
+<body class="bg-primary">
+<div class="background"></div>
+<div class="overlay"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white h1 d-flex align-items-center" href="#">
+            <img src="imagenes/logofullheader.png" alt="logo" width="50" class="d-inline-block align-text-top">
+            MIXTERIX - Comunidad Gamer
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item h5">
+                    <a class="nav-link " href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item h5">
+                    <a class="nav-link" href="about.html">Acerca De Mi</a>
+                </li>
+                <li class="nav-item h5">
+                    <a class="nav-link " href="social.html">Redes Sociales</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <h1></h1>
+</div>
+<div class="container  mb-4">
+    <div class="row g-4 justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+            <div class="card text-center bg-primary border-secondary hvr-float-shadow">
+                <a href="https://x.com/mixterix99" target="_blank">
+                    <img src="imagenes/twitter-png.webp" alt="logo-de-twitter" class="card-img-top">
+                </a>
+                <div class="card-header bg-secondary text-white fw-bold">
+                    TWITTER
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+            <div class="card text-center bg-primary border-secondary hvr-float-shadow">
+                <a href="https://www.tiktok.com/@mixterixoficial" target="_blank">
+                    <img src="imagenes/tiktok-png.webp" alt="logo-de-tiktok" class="card-img-top">
+                </a>
+                <div class="card-header bg-secondary text-white fw-bold">
+                    TIKTOK
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+            <div class="card text-center bg-primary border-secondary hvr-float-shadow">
+                <a href="https://www.youtube.com/channel/UCbfCDLM_aLGDD1OCZ_IXQkg" target="_blank">
+                    <img src="imagenes/youtube-png.png" alt="logo-de-youtube" class="card-img-top">
+                </a>
+                <div class="card-header bg-secondary text-white fw-bold">
+                    YOUTUBE
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+            <div class="card text-center bg-primary border-secondary hvr-float-shadow">
+                <a href="https://discord.gg/WGu4QNFS" target="_blank">
+                    <img src="imagenes/discord-png.png" alt="logo-de-discord" class="card-img-top">
+                </a>
+                <div class="card-header bg-secondary text-white fw-bold">
+                    DISCORD
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer bg-primary bg-gradient">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- TWITTER -->
+            <a
+                data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #107cae;"
+                href="https://x.com/mixterix99"
+                role="button"
+                target="_blank"
+            ><i class="fab fa-twitter"></i></a>
+
+            <!-- YOUTUBE -->
+            <a
+                data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #fb1d00;"
+                href="https://www.youtube.com/channel/UCbfCDLM_aLGDD1OCZ_IXQkg"
+                role="button"
+                target="_blank"
+            ><i class="fab fa-youtube"></i></a>
+
+            <!-- TIKTOK -->
+            <a
+                data-mdb-ripple-init
+                class="btn text-white btn-floating m-1"
+                style="background-color: #000000;"
+                href="https://www.tiktok.com/@mixterixoficial"
+                role="button"
+                target="_blank"
+            ><i class="fab fa-tiktok"></i></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright: MixterixOficial
+    </div>
+    
+</footer>
+    
+</body>
+</html>
